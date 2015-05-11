@@ -1,8 +1,27 @@
 'use strict'
-gem =
-    name: 'Diamond'
-    price: 2.95
-    description: '...'
+gem = [
+    {
+        name: 'Diamond'
+        price: 2.95
+        canPurchase: true
+        soldOut: false
+    }
+    {
+        name: 'Topaz'
+        price: 3.50
+        canPurchase: true
+        soldOut: false
+    }
+    {
+        name: 'Azurite'
+        price: 110.50
+        canPurchase: false
+        soldOut: true
+    }
+    {name: 'Bloodstone', price: 5.95}
+    {name: 'Zircon', price: 3.95}
+]
+
 ###*
  # @ngdoc function
  # @name gemStoreApp.controller:StoreCtrl
@@ -17,4 +36,4 @@ angular.module 'gemStoreApp'
         'AngularJS'
         'Karma'
     ]
-    @product = gem
+    @products = gem
