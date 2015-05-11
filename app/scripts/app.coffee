@@ -23,7 +23,8 @@ angular
     $routeProvider
     .when '/',
         templateUrl: 'views/store.html'
-        controller: 'MainCtrl'
+        controller: 'StoreCtrl'
+        controllerAs: 'store'
     .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
