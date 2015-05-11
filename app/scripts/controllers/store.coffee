@@ -1,26 +1,4 @@
 'use strict'
-gem = [
-    {
-        name: 'Diamond'
-        price: 2.95
-        canPurchase: true
-        soldOut: false
-    }
-    {
-        name: 'Topaz'
-        price: 3.50
-        canPurchase: true
-        soldOut: false
-    }
-    {
-        name: 'Azurite'
-        price: 110.50
-        canPurchase: false
-        soldOut: true
-    }
-    {name: 'Bloodstone', price: 5.95}
-    {name: 'Zircon', price: 3.95}
-]
 
 ###*
  # @ngdoc function
@@ -32,10 +10,18 @@ gem = [
 angular.module 'gemStoreApp'
 .controller 'StoreCtrl',
     class StoreCtrl
-        constructor: ($scope) ->
-            $scope.awesomeThings = [
+        @$inject: ['$scope', '$http']
+        constructor: (@$scope, @$http)->
+            @$scope.awesomeThings = [
                 'HTML5 Boilerplate'
                 'AngularJS'
                 'Karma'
             ]
-        products: gem
+
+            @$http.get 'scripts/store-products.json'
+            .success (result) =>
+                @products = result
+
+
+
+
