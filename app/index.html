@@ -48,9 +48,16 @@
       </div>
     </div>
 
-    <div class="container">
-    <div ng-view=""></div>
+    <div ng-controller="StoreCtrl as store">
+        <h1>{{store.product.name}}</h1>
+        <h2>${{store.product.price}}</h2>
+        <p>{{store.product.description}}</p>
+
     </div>
+
+    <!--<div class="container">-->
+    <!--<div ng-view=""></div>-->
+    <!--</div>-->
 
     <div class="footer">
       <div class="container">
@@ -90,6 +97,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/store.js"></script>
         <!-- endbuild -->
 </body>
 </html>
