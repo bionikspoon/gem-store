@@ -30,10 +30,12 @@ gem = [
  # Controller of the gemStoreApp
 ###
 angular.module 'gemStoreApp'
-.controller 'StoreCtrl', ($scope) ->
-    $scope.awesomeThings = [
-        'HTML5 Boilerplate'
-        'AngularJS'
-        'Karma'
-    ]
-    @products = gem
+.controller 'StoreCtrl',
+    class StoreCtrl
+        constructor: ($scope) ->
+            $scope.awesomeThings = [
+                'HTML5 Boilerplate'
+                'AngularJS'
+                'Karma'
+            ]
+        products: gem
