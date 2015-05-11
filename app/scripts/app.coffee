@@ -9,7 +9,7 @@
  # Main module of the application.
 ###
 angular
-  .module 'gemStoreApp', [
+.module 'gemStoreApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -18,15 +18,15 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ]
-  .config ($routeProvider) ->
+]
+.config ($routeProvider) ->
     $routeProvider
-      .when '/',
+    .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
-      .when '/about',
+    .when '/about',
         templateUrl: 'views/about.html'
         controller: 'AboutCtrl'
-      .otherwise
-        redirectTo: '/'
+    .otherwise
+            redirectTo: '/'
 
