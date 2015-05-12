@@ -8,9 +8,9 @@
         "color":       "#CCC",
         "faces":       14,
         "images":      [
-            "http://cl.zdn.io/UuY7/gem-02.gif",
-            "http://cl.zdn.io/UuWP/gem-05.gif",
-            "http://cl.zdn.io/UuD4/gem-09.gif"
+            "images/gem-02.gif",
+            "images/gem-05.gif",
+            "images/gem-09.gif"
         ],
         "reviews":     [
             {
@@ -34,9 +34,9 @@
         "color":       "#EEE",
         "faces":       12,
         "images":      [
-            "http://cl.zdn.io/UvAK/gem-01.gif",
-            "http://cl.zdn.io/Uuwd/gem-03.gif",
-            "http://cl.zdn.io/UuVP/gem-04.gif"
+            "images/gem-01.gif",
+            "images/gem-03.gif",
+            "images/gem-04.gif"
         ],
         "reviews":     [
             {
@@ -60,9 +60,9 @@
         "color":       "#000",
         "faces":       6,
         "images":      [
-            "http://cl.zdn.io/Uv3v/gem-06.gif",
-            "http://cl.zdn.io/Uu84/gem-07.gif",
-            "http://cl.zdn.io/Uuky/gem-10.gif"
+            "images/gem-06.gif",
+            "images/gem-07.gif",
+            "images/gem-10.gif"
         ],
         "reviews":     [
             {
