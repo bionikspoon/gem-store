@@ -9,10 +9,8 @@
     <div class="list-group">
         <div class="product list-group-item"
              ng-repeat="product in store.products">
-            <h3 class="list-group-item-heading">
-                {{product.name}}
-                <em class="pull-right">{{product.price | currency }}</em>
-            </h3>
+
+            <product-title></product-title>
 
             <!--Product Gallery-->
             <div ng-show="product.images.length"
@@ -65,7 +63,9 @@
                     <blockquote ng-repeat="review in product.reviews">
                         <b>Stars: {{review.stars}}</b>
                         {{review.body}}
-                        <cite class="clearfix">by: {{review.author}} <span ng-show="review.createdOn.length">on</span> {{review.createdOn | date}}</cite>
+                        <cite class="clearfix">by: {{review.author}}
+                            <span ng-show="review.createdOn.length">on</span> {{review.createdOn | date}}
+                        </cite>
                     </blockquote>
 
                     <!--Review Form-->

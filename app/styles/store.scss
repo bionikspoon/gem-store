@@ -88,9 +88,9 @@ img {
 
 
 .ng-invalid.ng-dirty {
-    @extend .has-error;
+    @extend .has-error !optional;
 }
 .ng-valid.ng-dirty {
-    @extend .has-success;
+    @extend .has-success !optional;
 }
 

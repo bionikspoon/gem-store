@@ -10,18 +10,8 @@
 angular.module 'gemStoreApp'
 .controller 'StoreCtrl',
             class StoreCtrl
-                @$inject: ['$scope', '$http']
-                constructor: (@$scope, @$http)->
-                    @$scope.awesomeThings = [
-                        'HTML5 Boilerplate'
-                        'AngularJS'
-                        'Karma'
-                    ]
-
+                @$inject: ['$http']
+                constructor: (@$http)->
                     @$http.get 'products.json'
                     .success (result) =>
                         @products = result
-
-
-
-
