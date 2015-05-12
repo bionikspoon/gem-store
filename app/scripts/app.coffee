@@ -20,17 +20,18 @@ angular
     'ngTouch'
 ]
 .config ($routeProvider) ->
-    $routeProvider\
+    return $routeProvider
     .when '/',
-          templateUrl: 'views/store.html'
-          controller: 'StoreCtrl'
-          controllerAs: 'store'
+        templateUrl: 'views/main.html'
+        controller: 'MainCtrl'
+        controllerAs: 'MainCtrl'
+    .when '/store',
+        templateUrl: 'views/store.html'
+        controller: 'StoreCtrl'
+        controllerAs: 'store'
     .when '/about',
-          templateUrl: 'views/about.html'
-          controller: 'AboutCtrl'
-    .when '/about',
-          templateUrl: 'views/about.html'
-          controller: 'AboutCtrl'
+        templateUrl: 'views/about.html'
+        controller: 'AboutCtrl'
     .otherwise
             redirectTo: '/'
 

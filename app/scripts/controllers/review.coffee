@@ -8,10 +8,10 @@
  # Controller of the gemStoreApp
 ###
 angular.module 'gemStoreApp'
-    .controller 'ReviewCtrl',
-            class ReviewCtrl
-                review:{}
-                addReview: (product) ->
-                    @review.date = Date.now();
-                    product.reviews.push(@review)
-                    @review = {}
+.controller 'ReviewCtrl',
+    class ReviewCtrl
+        review: {}
+        addReview: (product) ->
+            @review.date = Date.now();
+            product.reviews.push(@review)
+            @review = {}

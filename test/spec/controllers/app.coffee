@@ -1,17 +1,17 @@
 'use strict'
 
-describe 'Controller: PanelCtrl', ->
+describe 'Controller: AppCtrl', ->
 
   # load the controller's module
   beforeEach module 'gemStoreApp'
 
-  PanelCtrl = {}
+  AppCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    PanelCtrl = $controller 'PanelCtrl', {
+    AppCtrl = $controller 'AppCtrl', {
       $scope: scope
     }
 

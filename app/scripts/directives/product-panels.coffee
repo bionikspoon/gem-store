@@ -18,5 +18,3 @@ angular.module 'gemStoreApp'
 
         isSelected: (checkTab) ->
             @tab == checkTab
-
-

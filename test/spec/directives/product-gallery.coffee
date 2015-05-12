@@ -10,7 +10,7 @@ describe 'Directive: productGallery', ->
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
 
-  it 'should make hidden element visible', inject ($compile) ->
-    element = angular.element '<product-gallery></product-gallery>'
-    element = $compile(element) scope
-    expect(element.text()).toBe 'this is the productGallery directive'
+#  it 'should make hidden element visible', inject ($compile) ->
+#    element = angular.element '<product-gallery></product-gallery>'
+#    element = $compile(element) scope
+#    expect(element.text()).toBe 'this is the productGallery directive'

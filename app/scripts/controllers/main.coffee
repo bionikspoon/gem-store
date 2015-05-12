@@ -2,13 +2,13 @@
 
 ###*
  # @ngdoc function
- # @name gemStoreApp.controller:AboutCtrl
+ # @name gemStoreApp.controller:MainCtrl
  # @description
- # # AboutCtrl
+ # # MainCtrl
  # Controller of the gemStoreApp
 ###
 angular.module 'gemStoreApp'
-.controller 'AboutCtrl', ($scope) ->
+.controller 'MainCtrl', ($scope) ->
     $scope.awesomeThings = [
         'HTML5 Boilerplate'
         'AngularJS'

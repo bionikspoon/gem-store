@@ -1,5 +1,12 @@
 'use strict'
 
+class StoreCtrl
+    products: []
+    constructor: ($http)->
+        $http.get 'products.json'
+        .success (result) =>
+            @products = result
+
 ###*
  # @ngdoc function
  # @name gemStoreApp.controller:StoreCtrl
@@ -8,11 +15,7 @@
  # Controller of the gemStoreApp
 ###
 angular.module 'gemStoreApp'
-.controller 'StoreCtrl',
-            class StoreCtrl
-                @$inject: ['$http']
-                constructor: ($http)->
-                    @products = []
-                    $http.get 'products.json'
-                    .success (result) =>
-                        @products = result
+.controller 'StoreCtrl', StoreCtrl
+
+
+

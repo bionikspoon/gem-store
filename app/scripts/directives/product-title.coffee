@@ -7,6 +7,6 @@
  # # productTitle
 ###
 angular.module 'gemStoreApp'
-  .directive 'productTitle', ->
+.directive 'productTitle', ->
     restrict: 'E'
     templateUrl: 'templates/product-title.html'
