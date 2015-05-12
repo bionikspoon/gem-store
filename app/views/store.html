@@ -16,49 +16,88 @@
 
       <div ng-show="product.images.length"
            ng-controller="GalleryCtrl as gallery">
-        <div class="img-wrap">
-          <img ng-src="{{product.images[gallery.imageIndex]}}"
-               class="img-circle center-block" />
-        </div>
+        <img ng-src="{{product.images[gallery.imageIndex]}}"
+             class="img-circle center-block img-responsive " />
         <ul class="list-inline list-unstyled text-center">
-          <li class="small-image pull-left thumbnail"
+          <li class="small-image"
               ng-repeat="image in product.images"
               ng-click="gallery.setCurrent($index)">
-            <img ng-src="{{image}} class="thumbnail"" />
+            <img ng-src="{{image}}"
+                 class="img-circle gem-thumbnail" />
           </li>
         </ul>
 
       </div>
 
 
-      <div class="list-group-item-text">
-        <section ng-controller="PanelCtrl as panel">
-          <ul class="nav nav-pills">
-            <li ng-class="{active:panel.isSelected(1)}">
-              <a ng-click="panel.selectTab(1)">Description</a></li>
-            <li ng-class="{active:panel.isSelected(2)}">
-              <a ng-click="panel.selectTab(2)">Specifications</a></li>
-            <li ng-class="{active:panel.isSelected(3)}">
-              <a ng-click="panel.selectTab(3)">Reviews</a></li>
-          </ul>
-          <div class="panel"
-               ng-show="panel.isSelected(1)">
-            <h4>Description</h4>
+      <section class="list-group-item-text"
+               ng-controller="PanelCtrl as panel">
+        <ul class="nav nav-pills">
+          <li ng-class="{active:panel.isSelected(1)}">
+            <a ng-click="panel.selectTab(1)">Description</a></li>
+          <li ng-class="{active:panel.isSelected(2)}">
+            <a ng-click="panel.selectTab(2)">Specifications</a></li>
+          <li ng-class="{active:panel.isSelected(3)}">
+            <a ng-click="panel.selectTab(3)">Reviews</a></li>
+        </ul>
+        <div class="panel"
+             ng-show="panel.isSelected(1)">
+          <h4>Description</h4>
 
-            <p>{{product.description}}</p>
-          </div>
-          <div class="panel"
-               ng-show="panel.isSelected(2)">
-            <h4>Specifications</h4>
-            <blockquote>None yet</blockquote>
-          </div>
-          <div class="panel"
-               ng-show="panel.isSelected(3)">
-            <h4>Reviews</h4>
-            <blockquote>None yet</blockquote>
-          </div>
-        </section>
-      </div>
+          <p>{{product.description}}</p>
+        </div>
+        <div class="panel"
+             ng-show="panel.isSelected(2)">
+          <h4>Specifications</h4>
+          <blockquote>None yet</blockquote>
+        </div>
+        <div class="panel"
+             ng-show="panel.isSelected(3)">
+          <h4>Reviews</h4>
+          <blockquote ng-repeat="review in product.reviews">
+            <b>Stars: {{review.stars}}</b>
+              {{review.body}}
+            <cite>by: {{review.author}}</cite>
+          </blockquote>
+          <blockquote>
+            <b>Stars: {{review.stars}}</b>
+              {{review.body}}
+            <cite class="clearfix">by: {{review.author}}</cite>
+          </blockquote>
+          <form name="reviewForm">
+            <div class="form-group">
+              <label for="reviewStars">Rate this item</label>
+              <select id="reviewStars"
+                      ng-model="review.stars">
+                <option value="1">1 Star</option>
+                <option value="2">2 Star</option>
+                <option value="3">3 Star</option>
+                <option value="4">4 Star</option>
+                <option value="5">5 Star</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reviewText">Submit a review</label>
+              <textarea class="form-control"
+                        name="reviewText"
+                        ng-model="review.body"
+                        placeholder="Submit a review"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email"
+                     class="form-control"
+                     name="email"
+                     placeholder="Enter email"
+                     ng-model="review.author">
+            </div>
+
+            <input type="submit"
+                   value="Submit" />
+          </form>
+        </div>
+      </section>
+
     </div>
   </div>
 
