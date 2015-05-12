@@ -85,3 +85,12 @@ img {
         background: #ac005f;
     }
 }
+
+
+.ng-invalid.ng-dirty {
+    @extend .has-error;
+}
+.ng-valid.ng-dirty {
+    @extend .has-success;
+}
+
