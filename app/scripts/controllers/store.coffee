@@ -11,7 +11,8 @@ angular.module 'gemStoreApp'
 .controller 'StoreCtrl',
             class StoreCtrl
                 @$inject: ['$http']
-                constructor: (@$http)->
-                    @$http.get 'products.json'
+                constructor: ($http)->
+                    @products = []
+                    $http.get 'products.json'
                     .success (result) =>
                         @products = result
