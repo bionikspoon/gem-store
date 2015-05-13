@@ -17,14 +17,14 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngLocale',
+    'ngMaterial'
 ]
 .config ($routeProvider) ->
     return $routeProvider
     .when '/',
         templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-        controllerAs: 'MainCtrl'
     .when '/store',
         templateUrl: 'views/store.html'
         controller: 'StoreCtrl'
@@ -35,3 +35,7 @@ angular
     .otherwise
             redirectTo: '/'
 
+.config ($mdThemingProvider) ->
+    $mdThemingProvider.theme('default')
+        .primaryPalette('pink')
+        .accentPalette('indigo');

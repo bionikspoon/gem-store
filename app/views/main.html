@@ -1,1 +1,25 @@
-<p>This is the main view.</p>
+<div ng-controller="StoreCtrl as store">
+    <header>
+        <h1 class="md-display-2">Flatlander Crafted Gems</h1>
+
+        <h2 class="md-headline">An Angular store</h2>
+    </header>
+
+
+    <div layout="row"
+         layout-align="start start"
+         layout-wrap>
+        <md-whiteframe class="md-whiteframe-z1"
+                       flex="60"
+                       layout-align="center center"
+                       ng-repeat="product in store.products"
+                       style="margin-bottom: 32px;">
+            <product-title></product-title>
+
+            <product-gallery></product-gallery>
+
+            <product-panels></product-panels>
+        </md-whiteframe>
+
+    </div>
+</div>

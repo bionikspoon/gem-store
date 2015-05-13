@@ -1,0 +1,29 @@
+<md-content class="md-padding">
+    <md-tabs md-dynamic-height
+             md-border-bottom
+             md-stretch-tabs="always">
+        <md-tab label="Description">
+            <md-content class="md-padding">
+                <h1 class="md-display-2">Description</h1>
+
+                <p>{{product.description}}</p>
+            </md-content>
+        </md-tab>
+        <md-tab label="Specifications">
+            <md-content class="md-padding">
+                <h1 class="md-display-2">Specifications</h1>
+
+                <p>None yet.</p>
+            </md-content>
+        </md-tab>
+        <md-tab label="Reviews">
+            <md-content class="md-padding">
+                <h1 class="md-display-2">Reviews</h1>
+
+                <product-review-list></product-review-list>
+
+                <product-review-form></product-review-form>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</md-content>

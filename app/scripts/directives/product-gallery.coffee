@@ -1,5 +1,10 @@
 'use strict'
 
+class GalleryCtrl
+    imageIndex: 0
+    setCurrent: (imageNumber) ->
+        @imageIndex = imageNumber || 0
+
 ###*
  # @ngdoc directive
  # @name gemStoreApp.directive:productGallery
@@ -9,10 +14,6 @@
 angular.module 'gemStoreApp'
 .directive 'productGallery', ->
     restrict: 'E'
-    templateUrl: 'templates/product-gallery.html'
+    templateUrl: 'views/templates/product-gallery.html'
     controllerAs: 'gallery'
-    controller: class
-        imageIndex: 0
-        setCurrent: (imageNumber) ->
-            @imageIndex = imageNumber || 0
-
+    controller: GalleryCtrl

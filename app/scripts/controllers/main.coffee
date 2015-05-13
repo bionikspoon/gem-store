@@ -1,5 +1,9 @@
 'use strict'
 
+class MainCtrl
+    constructor: ($scope, $mdBottomSheet) ->
+        return
+
 ###*
  # @ngdoc function
  # @name gemStoreApp.controller:MainCtrl
@@ -8,9 +12,4 @@
  # Controller of the gemStoreApp
 ###
 angular.module 'gemStoreApp'
-.controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-        'HTML5 Boilerplate'
-        'AngularJS'
-        'Karma'
-    ]
+.controller 'MainCtrl', MainCtrl

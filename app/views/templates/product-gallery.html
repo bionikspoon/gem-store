@@ -1,0 +1,21 @@
+<!--Product Gallery-->
+<md-content class="md-padding"
+            ng-show="product.images.length">
+    <div layout="row"
+         layout-align="center center">
+        <img ng-src="{{product.images[gallery.imageIndex]}}"
+             class="" />
+    </div>
+
+    <div layout="row"
+         layout-align="center center"
+         flex
+         flex="33">
+        <div flex
+             ng-repeat="image in product.images"
+             ng-click="gallery.setCurrent($index)">
+            <img ng-src="{{image}}"
+                 class="img-circle gem-thumbnail" />
+        </div>
+    </div>
+</md-content>

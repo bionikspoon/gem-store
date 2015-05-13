@@ -1,0 +1,38 @@
+<form name="reviewForm"
+      ng-submit="reviewForm.$valid && ReviewCtrl.addReview(product)"
+      novalidate>
+
+    <!--Form Live Preview-->
+    <blockquote ng-show="ReviewCtrl.review.body.length || ReviewCtrl.review.author.length">
+        <br />
+        <b ng-show="stars">Stars: {{stars}}</b>
+        {{ReviewCtrl.review.body}}
+        <cite class="clearfix"
+              ng-show="ReviewCtrl.review.author.length">by: {{ReviewCtrl.review.author}}</cite>
+    </blockquote>
+
+    <!--Form input-->
+
+    <md-input-container>
+        <md-slider aria-label="Rate this Item"
+                   md-discrete
+                   ng-model="stars"
+                   min="1"
+                   max="5"
+                   step="1"></md-slider>
+    </md-input-container>
+    <md-input-container flex>
+        <label>Submit a review</label>
+        <textarea name="reviewText"
+                  ng-model="ReviewCtrl.review.body"
+                  required></textarea>
+    </md-input-container>
+    <md-input-container>
+        <label>Email</label>
+        <input ng-model="ReviewCtrl.review.author"
+               type="email"
+               required />
+    </md-input-container>
+    <md-button class="md-raised md-primary">Submit</md-button>
+
+</form>

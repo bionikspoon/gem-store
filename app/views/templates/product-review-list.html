@@ -1,0 +1,8 @@
+<!--List Reviews-->
+<blockquote ng-repeat="review in product.reviews">
+    <b>Stars: {{review.stars}}</b>
+    {{review.body}}
+    <cite class="clearfix">by: {{review.author}}
+        <span ng-show="review.createdOn.length">on</span> {{review.createdOn | date}}
+    </cite>
+</blockquote>

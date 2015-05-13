@@ -1,6 +1,7 @@
 'use strict'
 
 class StoreCtrl
+    @$inject: [ '$http' ]
     products: []
     constructor: ($http)->
         $http.get 'products.json'
