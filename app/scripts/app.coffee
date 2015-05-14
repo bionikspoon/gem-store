@@ -1,5 +1,6 @@
 'use strict'
 
+
 ###*
  # @ngdoc overview
  # @name gemStoreApp
@@ -19,12 +20,15 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngLocale',
-    'ngMaterial'
+    'ngMaterial',
+    'layoutModule'
 ]
+.config ($mdThemingProvider) ->
+    return $mdThemingProvider.theme('default')
+    .primaryPalette('pink')
+    .accentPalette('indigo');
 .config ($routeProvider) ->
     return $routeProvider
-    .when '/',
-        templateUrl: 'views/main.html'
     .when '/store',
         templateUrl: 'views/store.html'
         controller: 'StoreCtrl'
@@ -34,8 +38,3 @@ angular
         controller: 'AboutCtrl'
     .otherwise
             redirectTo: '/'
-
-.config ($mdThemingProvider) ->
-    $mdThemingProvider.theme('default')
-        .primaryPalette('pink')
-        .accentPalette('indigo');

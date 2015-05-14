@@ -1,0 +1,47 @@
+<md-toolbar layout="row" md-scroll-shrink="true">
+    <md-button class="menu"
+               aria-label="Menu"
+               ng-click="vm.toggleNavList()" hide-gt-sm>
+        <md-icon md-svg-src="images/menu.svg"></md-icon>
+    </md-button>
+    <h1 class="md-headline">Angular Gem Store</h1>
+</md-toolbar>
+
+
+<md-content flex
+     layout="row"
+     ng-controller="UsersController as usersCtrl">
+    <md-sidenav md-component-id="left"
+                class="md-whiteframe-z2"
+                md-is-locked-open="$mdMedia('gt-sm')"
+                layout="column"
+                ng-click="vm.toggleNav()">
+        <md-list>
+            <md-list-item ng-repeat="user in usersCtrl.users">
+                <md-button ng-click="usersCtrl.selectUser(user)"
+                           aria-label="{{user.name}}">
+                    <md-icon md-svg-src="{{user.avatar}}"
+                             class="avatar"></md-icon>
+                    {{user.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <md-content id="content"
+                flex>
+        <md-icon md-svg-src="{{usersCtrl.selectedUser.avatar}}"
+                 class="avatar"></md-icon>
+        <h2>{{usersCtrl.selectedUser.name}}</h2>
+
+        <p>{{usersCtrl.selectedUser.content}}</p>
+
+        <md-button aria-label="Share"
+                   class="share"
+                   md-no-ink
+                   ng-click="usersCtrl.share($event)">
+            <md-icon md-svg-src="images/share.svg"></md-icon>
+        </md-button>
+    </md-content>
+
+</md-content>
